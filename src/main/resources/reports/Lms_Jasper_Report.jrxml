@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lms_Jasper_Report" pageWidth="842" pageHeight="842" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6042b7e5-716b-4c32-b4ba-51209311ee2e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (5)"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="PaymentID" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    lms.course.courseId,
+    lms.course.name,
+    lms.course.duration,
+    lms.course.price,
+    lms.payment.paymentId,
+    lms.payment.date,
+    lms.payment.amount,
+    lms.student.studentId,
+    lms.student.firstName,
+    lms.student.lastName,
+    lms.student.admissionDate
+FROM
+    lms.course
+        LEFT JOIN lms.paymentDetails ON lms.course.courseId = lms.paymentDetails.courseId
+        LEFT JOIN lms.payment ON lms.paymentDetails.paymentId = lms.payment.paymentId
+        LEFT JOIN lms.student ON lms.payment.studentId = lms.student.studentId
+WHERE
+   lms.payment.paymentId = $P{PaymentID}
+GROUP BY
+    lms.payment.paymentId, lms.course.courseId]]>
+	</queryString>
+	<field name="courseId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="courseId"/>
+		<property name="com.jaspersoft.studio.field.label" value="courseId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="course"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="course"/>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="duration"/>
+		<property name="com.jaspersoft.studio.field.label" value="duration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="course"/>
+	</field>
+	<field name="price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="course"/>
+	</field>
+	<field name="paymentId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paymentId"/>
+		<property name="com.jaspersoft.studio.field.label" value="paymentId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="studentId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="studentId"/>
+		<property name="com.jaspersoft.studio.field.label" value="studentId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="firstName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="firstName"/>
+		<property name="com.jaspersoft.studio.field.label" value="firstName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="lastName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastName"/>
+		<property name="com.jaspersoft.studio.field.label" value="lastName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="admissionDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="admissionDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="admissionDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<group name="courseId">
+		<groupExpression><![CDATA[$F{courseId}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="duration">
+		<groupExpression><![CDATA[$F{duration}]]></groupExpression>
+	</group>
+	<group name="price">
+		<groupExpression><![CDATA[$F{price}]]></groupExpression>
+	</group>
+	<group name="paymentId">
+		<groupExpression><![CDATA[$F{paymentId}]]></groupExpression>
+	</group>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<group name="amount">
+		<groupExpression><![CDATA[$F{amount}]]></groupExpression>
+	</group>
+	<group name="studentId">
+		<groupExpression><![CDATA[$F{studentId}]]></groupExpression>
+	</group>
+	<group name="firstName">
+		<groupExpression><![CDATA[$F{firstName}]]></groupExpression>
+	</group>
+	<group name="lastName">
+		<groupExpression><![CDATA[$F{lastName}]]></groupExpression>
+	</group>
+	<group name="admissionDate">
+		<groupExpression><![CDATA[$F{admissionDate}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="587" y="-9" width="246" height="49" forecolor="#0504AA" uuid="b68fa16d-d89a-4680-ab9c-4a2abd38adb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Dialog" size="35" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="-21" width="199" height="75" uuid="400463e8-9a92-45bc-a7c0-3c6af71df7af"/>
+				<imageExpression><![CDATA["C:/Users/Dilsa/Pictures/Screenshots/Screenshot 2024-04-13 070225.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="-20" y="49" width="842" height="36" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#4169E1" uuid="6231f9ab-8d22-4aa2-8082-f8c06460f8aa"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="80" width="842" height="5" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#0504AA" uuid="81663dfc-89ca-4873-bfac-f45625d7bedf"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-1" y="50" width="100" height="29" forecolor="#FFFFFF" uuid="6c5f6039-7efd-4a4b-ba82-a40aa011f26c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="50" width="121" height="29" forecolor="#FFFFFF" uuid="a4635900-9669-4015-8f5e-9b2ffd79c863"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="705" y="50" width="104" height="30" forecolor="#FFFFFF" uuid="f1912ecb-6eec-4b92-a4e3-a77295d54e33"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="50" width="100" height="30" forecolor="#FFFFFF" uuid="1aab5d04-55cc-4bb7-a881-fc3a9f87272b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paymentId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="4" width="141" height="29" forecolor="#000000" backcolor="#000000" uuid="c49d9054-6fc6-4ad0-b3bb-59aa303340c0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student ID             ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="140" height="29" forecolor="#000000" backcolor="#000000" uuid="81792990-5028-4972-bfdc-f94a016ad493"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name                     ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="64" width="140" height="29" forecolor="#000000" backcolor="#000000" uuid="663e4af8-18f6-411a-91ef-e3fe869248f6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Addmission date  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="4" width="10" height="29" forecolor="#000000" backcolor="#000000" uuid="f5847747-4666-47d2-8b70-aa8bc1cd4a98"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="34" width="10" height="29" forecolor="#000000" backcolor="#000000" uuid="14736c43-864b-48f9-8da7-f62d3170a66d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="64" width="10" height="29" forecolor="#000000" backcolor="#000000" uuid="bbfa7852-ffa3-45db-b6d4-f9388aa496ca"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="599" y="4" width="200" height="29" uuid="7ce02e2a-e5f4-4806-ac26-cb8a3f1e755f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55b4527e-b675-4896-b3cd-f80b252234ec"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="599" y="34" width="200" height="29" uuid="7ae71e3d-7b47-478b-96e1-54a4b6636ed8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55b4527e-b675-4896-b3cd-f80b252234ec"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstName} + " " + $F{lastName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMM d, yyyy">
+				<reportElement x="599" y="64" width="200" height="29" uuid="392f50ab-3dce-4f00-bf06-0a597a4ae8e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55b4527e-b675-4896-b3cd-f80b252234ec"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admissionDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle radius="15">
+				<reportElement x="-8" y="3" width="819" height="26" forecolor="#000000" backcolor="#4169E1" uuid="47f61ce9-171b-4724-ab97-e34a2dcc6bc3"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="1" width="130" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="b70262b4-29b8-4107-af9c-989e8c4a97e2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Course ID             ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="130" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="b3cc861a-60f8-4319-b1e2-33a60871254f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="1" width="130" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="52350a99-d989-4b4c-83c9-919ff492fd8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="695" y="1" width="105" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="ab32e024-1cb4-43df-8a84-50a15dbb661b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout"/>
+			<textField>
+				<reportElement x="40" y="6" width="100" height="30" uuid="3f6f6709-5759-4eb5-b076-701f846a50fb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a360ba0-eaa7-48dc-9d53-01af56bd99e5"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{courseId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="6" width="227" height="30" uuid="5253aaed-39bc-43c5-b6d3-62614ddffb04">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f961b3f-cb30-4d8d-aead-836459401eb4"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="6" width="100" height="30" uuid="cefa694a-5aff-42f8-b9d6-106e342fbf97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2b83bd84-ffa2-4e21-a4e7-12730fc3bc15"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="676" y="6" width="100" height="30" uuid="fd040329-48a3-4b6f-9e45-ee35851a4465">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55b4527e-b675-4896-b3cd-f80b252234ec"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="59" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="2" width="842" height="7" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#4169E1" uuid="94996f1e-b120-40e3-81ef-3ce156270de2"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="9" width="842" height="5" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#0504AA" uuid="6e98a12d-19a0-443e-8da8-705e3906377e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="22" y="14" width="100" height="29" forecolor="#000000" uuid="acc510f3-64d4-47d3-a4d1-0291be67594f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total     :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-20" y="47" width="842" height="4" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#0504AA" uuid="f7f99cfd-a33c-4792-abfc-cf3fdda6483f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="53" width="842" height="4" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#0504AA" uuid="4dc35a2d-ab8f-4ef1-922f-9b6b6725364d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="676" y="15" width="100" height="30" uuid="32f907e6-218d-41f1-9bd3-5b952ab2395f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55b4527e-b675-4896-b3cd-f80b252234ec"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Dialog" size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="182" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="128" width="100" height="23" uuid="195a376f-1dab-42c5-90c7-319365e48040"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="105" width="140" height="23" uuid="b6792343-2f90-44dc-b3cf-db72ff343baf"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[G.A .Dilsara]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-20" y="156" width="842" height="26" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#4169E1" uuid="62f43735-c388-484b-b4ea-6fd560079c9c"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="177" width="842" height="5" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#0504AA" uuid="d420f781-0f9a-4095-9f6b-b5325ce1b1d6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="158" width="201" height="22" forecolor="#FFFFFF" uuid="1d41b200-f3e9-48db-a455-427d3d919fcf"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Sahan Learner's, Baddegama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="587" y="158" width="230" height="22" forecolor="#FFFFFF" uuid="3734a417-a817-48c7-a1df-649ce7109232"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Tel :  0766677409 / 0742634670]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

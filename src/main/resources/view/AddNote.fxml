@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="305.0" prefWidth="700.0" style="-fx-background-color: #0504AA;" stylesheets="@../asserts/css/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.AddNoteController">
+    <children>
+        <Rectangle arcHeight="90.0" arcWidth="90.0" fill="WHITE" height="248.0" layoutX="28.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="644.0" />
+        <Group layoutX="53.0" layoutY="46.0">
+            <children>
+                <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="200.0" layoutY="8.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="3.0" width="595.0" />
+                <HBox alignment="CENTER" layoutX="18.0" prefHeight="20.0" prefWidth="95.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="190.0" text="Add Note" textFill="ROYALBLUE">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Group layoutX="98.0" layoutY="41.0">
+                    <children>
+                  <JFXTextField fx:id="txtNote" focusColor="ROYALBLUE" labelFloat="true" layoutY="20.0" onAction="#btnAddOnAction" onKeyReleased="#txtNoteOnKeyReleased" prefHeight="35.0" prefWidth="400.0" promptText="Note" unFocusColor="ROYALBLUE">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </JFXTextField>
+                    </children>
+                </Group>
+                <HBox layoutX="98.0" layoutY="132.0" style="-fx-background-color: #0504AA; -fx-background-radius: 5;">
+                    <children>
+                        <JFXButton fx:id="btnRegistor" buttonType="RAISED" defaultButton="true" onAction="#btnAddOnAction" prefHeight="40.0" prefWidth="400.0" ripplerFill="#4cc9f0" styleClass="btnLogin" text="ADD" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="16.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../asserts/icons/AddNote_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </HBox>
+            </children>
+        </Group>
+    </children>
+</AnchorPane>

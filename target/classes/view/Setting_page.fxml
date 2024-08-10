@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="settingsPane" prefHeight="843.0" prefWidth="1083.0" stylesheets="@../asserts/css/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.SettingsController">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="833.0" prefWidth="1073.0" style="-fx-background-color: #0504AA;">
+         <children>
+            <Group layoutX="25.0" layoutY="10.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="121.0" prefHeight="571.0" prefWidth="27.0" text="SETTINGS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <QuadCurve controlX="-231.0" controlY="125.0" endY="-279.0" fill="WHITE" layoutX="170.0" layoutY="283.0" startY="526.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="805.0" layoutX="169.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="865.0" />
+                  <Group layoutX="227.0" layoutY="49.0">
+                     <children>
+                        <Group layoutY="-20.0">
+                           <children>
+                              <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="361.0" layoutX="1.0" layoutY="8.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="3.0" width="747.0" />
+                              <HBox alignment="CENTER" layoutX="18.0" prefHeight="20.0" prefWidth="190.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="190.0" text="Change User Details" textFill="ROYALBLUE">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Group layoutX="160.0" layoutY="22.0">
+                                 <children>
+                                    <Group layoutX="15.0">
+                                       <children>
+                                          <Label layoutX="1.0" text="User ID" textFill="ROYALBLUE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="txtFieldUserId" focusColor="ROYALBLUE" layoutY="20.0" prefHeight="35.0" prefWidth="400.0" promptText="Enter a new user ID" unFocusColor="ROYALBLUE">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                             <opaqueInsets>
+                                                <Insets left="10.0" />
+                                             </opaqueInsets>
+                                          </JFXTextField>
+                                       </children>
+                                    </Group>
+                                    <Group layoutX="15.0" layoutY="65.0">
+                                       <children>
+                                          <Label layoutX="1.0" text="Name" textFill="ROYALBLUE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="txtFieldUserName" focusColor="ROYALBLUE" layoutY="20.0" onKeyReleased="#txtFieldUserNameOnKeyReleased" prefHeight="35.0" prefWidth="400.0" promptText="Enter your name" unFocusColor="ROYALBLUE">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                             <opaqueInsets>
+                                                <Insets left="10.0" />
+                                             </opaqueInsets>
+                                          </JFXTextField>
+                                       </children>
+                                    </Group>
+                                    <Group layoutX="15.0" layoutY="131.0">
+                                       <children>
+                                          <Label layoutX="1.0" layoutY="-1.0" text="Password" textFill="ROYALBLUE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXPasswordField fx:id="txtFieldNewPassword" focusColor="ROYALBLUE" layoutY="19.0" prefHeight="35.0" prefWidth="400.0" promptText="Enter new password" unFocusColor="ROYALBLUE" />
+                                          <JFXPasswordField fx:id="txtFieldConfirmPassword" focusColor="ROYALBLUE" layoutY="68.0" prefHeight="35.0" prefWidth="400.0" promptText="Confirm password" unFocusColor="ROYALBLUE" />
+                                       </children>
+                                    </Group>
+                                    <HBox layoutX="15.0" layoutY="278.0" style="-fx-background-color: #0504AA; -fx-background-radius: 5;">
+                                       <children>
+                                          <JFXButton buttonType="RAISED" defaultButton="true" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="400.0" ripplerFill="#4cc9f0" styleClass="btnLogin" text="UPDATE" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../asserts/icons/Update_icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Group>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

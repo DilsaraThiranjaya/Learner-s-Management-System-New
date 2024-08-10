@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="studenstPane" prefHeight="843.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.StudentController">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="833.0" prefWidth="1073.0" style="-fx-background-color: #0504AA;">
+         <children>
+            <Group layoutX="25.0" layoutY="10.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="121.0" prefHeight="571.0" prefWidth="27.0" text="STUDENTS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <QuadCurve controlX="-231.0" controlY="125.0" endY="-279.0" fill="WHITE" layoutX="170.0" layoutY="283.0" startY="526.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="805.0" layoutX="169.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="865.0" />
+                  <Group layoutX="25.0" layoutY="117.0">
+                     <children>
+                        <Group layoutX="220.0">
+                           <children>
+                              <JFXTextField fx:id="txtStudentId" focusColor="ROYALBLUE" labelFloat="true" layoutY="18.0" onKeyReleased="#txtStudentIdOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="Student ID *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="-59.0" layoutY="25.0">
+                           <children>
+                              <JFXTextField fx:id="txtFName" focusColor="ROYALBLUE" labelFloat="true" layoutX="279.0" layoutY="59.0" onKeyReleased="#txtFNameOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="First Name *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="267.0" layoutY="25.0">
+                           <children>
+                              <JFXTextField fx:id="txtLName" focusColor="ROYALBLUE" labelFloat="true" layoutX="336.0" layoutY="59.0" onKeyReleased="#txtLNameOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="Last Name *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="220.0" layoutY="133.0">
+                           <children>
+                              <DatePicker fx:id="dpDob" layoutY="22.0" prefHeight="35.0" prefWidth="330.0" promptText="Date of Birth *" />
+                           </children>
+                        </Group>
+                        <Group layoutX="603.0" layoutY="1.0">
+                           <children>
+                              <DatePicker fx:id="dpAdmissionDate" layoutY="17.0" prefHeight="35.0" prefWidth="330.0" promptText="Admission Date *" />
+                           </children>
+                        </Group>
+                        <Group layoutX="-59.0" layoutY="157.0">
+                           <children>
+                              <JFXTextField fx:id="txtNic" focusColor="ROYALBLUE" labelFloat="true" layoutX="279.0" layoutY="59.0" onKeyReleased="#txtNicOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="NIC *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="603.0" layoutY="153.0">
+                           <children>
+                              <Label layoutY="2.0" prefHeight="35.0" prefWidth="330.0" styleClass="downBoader" text="Gender *">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="rbMale" layoutX="147.0" layoutY="2.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Male">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="rbFemale" layoutX="231.0" layoutY="2.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Female">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Group layoutX="-59.0" layoutY="223.0">
+                           <children>
+                              <JFXTextField fx:id="txtAddress" focusColor="ROYALBLUE" labelFloat="true" layoutX="279.0" layoutY="59.0" onKeyReleased="#txtAddressOnKeyRelesed" prefHeight="35.0" prefWidth="713.0" promptText="Address *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="324.0" layoutY="157.0">
+                           <children>
+                              <JFXTextField fx:id="txtCNo" focusColor="ROYALBLUE" labelFloat="true" layoutX="279.0" layoutY="59.0" onKeyReleased="#txtCNoOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="Contact No *" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <Group layoutX="-116.0" layoutY="289.0">
+                           <children>
+                              <JFXTextField fx:id="txtEmail" focusColor="ROYALBLUE" labelFloat="true" layoutX="336.0" layoutY="59.0" onKeyReleased="#txtEmailOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="E-mail" unFocusColor="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </JFXTextField>
+                           </children>
+                        </Group>
+                        <TableView fx:id="tableStudent" layoutX="220.0" layoutY="445.0" prefHeight="214.0" prefWidth="713.0" styleClass="textFiled">
+                           <columns>
+                              <TableColumn fx:id="columnStudentId" prefWidth="113.0" text="Student ID" />
+                              <TableColumn fx:id="columnName" prefWidth="239.0" text="Name" />
+                              <TableColumn fx:id="columnDob" minWidth="0.0" prefWidth="129.0" text="Date of Birth" />
+                              <TableColumn fx:id="columnAge" minWidth="0.0" prefWidth="65.0" text="Age" />
+                              <TableColumn fx:id="columnGender" minWidth="0.0" prefWidth="100.0" text="Gender" />
+                              <TableColumn fx:id="columnAdmissionDate" minWidth="0.0" prefWidth="129.0" text="Admission Date" />
+                              <TableColumn fx:id="columnNic" minWidth="0.0" prefWidth="154.0" text="NIC" />
+                              <TableColumn fx:id="columnAddress" minWidth="0.0" prefWidth="203.0" text="Address" />
+                              <TableColumn fx:id="columnCNo" minWidth="0.0" prefWidth="159.0" text="Contact No" />
+                              <TableColumn fx:id="columnEmail" minWidth="0.0" prefWidth="189.0" text="E-mail" />
+                           </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                     </children>
+                  </Group>
+                  <Group layoutX="228.0" layoutY="29.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutY="8.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="3.0" width="747.0" />
+                        <HBox alignment="CENTER" layoutX="18.0" prefHeight="20.0" prefWidth="85.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="170.0" text="Search" textFill="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="24.0" mnemonicParsing="false" onAction="#txtSearchbySIdOnAction" prefHeight="35.0" prefWidth="43.0" styleClass="textFiled">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" styleClass="textFiled">
+                                 <image>
+                                    <Image url="@../asserts/icons/Search_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <JFXTextField fx:id="txtSearchbySId" focusColor="ROYALBLUE" layoutX="17.0" layoutY="24.0" onAction="#txtSearchbySIdOnAction" onKeyReleased="#txtSearchbySIdOnKeyRelesed" prefHeight="35.0" prefWidth="280.0" promptText="Search by Student ID" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="688.0" layoutY="24.0" mnemonicParsing="false" onAction="#txtSearchbyCNoOnAction" prefHeight="35.0" prefWidth="43.0" styleClass="textFiled">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" styleClass="textFiled">
+                                 <image>
+                                    <Image url="@../asserts/icons/Search_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <JFXTextField fx:id="txtSearchbyCNo" focusColor="ROYALBLUE" layoutX="401.0" layoutY="24.0" onAction="#txtSearchbyCNoOnAction" onKeyReleased="#txtSearchbyCNoOnKeyRelesed" prefHeight="35.0" prefWidth="280.0" promptText="Search by Contact No" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <JFXButton buttonType="RAISED" layoutX="449.0" layoutY="512.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="120.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="saveBtn" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@../asserts/icons/Save_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="579.0" layoutY="512.0" onAction="#btnRemoveOnAction" prefHeight="40.0" prefWidth="120.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="removeBtn" text="Remove" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@../asserts/icons/Delete_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="709.0" layoutY="512.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="120.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="updateBtn" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../asserts/icons/Update_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="838.0" layoutY="512.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="120.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="clearBtn" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../asserts/icons/Clear_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../asserts/css/stylesheet.css" />
+      <URL value="@../asserts/css/TableStyle.css" />
+   </stylesheets>
+</AnchorPane>

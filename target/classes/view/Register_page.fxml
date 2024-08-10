@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="registorPane" prefHeight="625.0" prefWidth="700.0" style="-fx-background-color: #0504AA;" stylesheets="@../asserts/css/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.RegistorController">
+   <children>
+      <Rectangle arcHeight="90.0" arcWidth="90.0" fill="WHITE" height="568.0" layoutX="28.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="644.0" />
+      <Group layoutX="53.0" layoutY="45.0">
+         <children>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="520.0" layoutY="8.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="3.0" width="595.0" />
+            <HBox alignment="CENTER" layoutX="18.0" prefHeight="20.0" prefWidth="95.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="190.0" text="Registor" textFill="ROYALBLUE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="98.0" layoutY="460.0" style="-fx-background-color: #0504AA; -fx-background-radius: 5;">
+               <children>
+                  <JFXButton fx:id="btnRegistor" buttonType="RAISED" defaultButton="true" onAction="#btnRegistorOnAction" prefHeight="40.0" prefWidth="400.0" ripplerFill="#4cc9f0" styleClass="btnLogin" text="REGISTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../asserts/icons/Registor_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Group layoutX="82.0" layoutY="93.0">
+               <children>
+                  <Group layoutX="15.0" layoutY="-56.0">
+                     <children>
+                        <Label layoutX="1.0" text="User ID" textFill="ROYALBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtFieldUserid" focusColor="ROYALBLUE" layoutY="20.0" prefHeight="35.0" prefWidth="400.0" promptText="Enter a new user ID" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <Group layoutX="15.0" layoutY="9.0">
+                     <children>
+                        <Label layoutX="1.0" text="Name" textFill="ROYALBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtFieldUsername" focusColor="ROYALBLUE" layoutY="20.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="35.0" prefWidth="400.0" promptText="Enter your name" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <Group layoutX="15.0" layoutY="219.0">
+                     <children>
+                        <Label layoutX="1.0" layoutY="-1.0" text="Password" textFill="ROYALBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXPasswordField fx:id="txtFieldPassword" focusColor="ROYALBLUE" layoutY="19.0" prefHeight="35.0" prefWidth="400.0" promptText="Enter password" unFocusColor="ROYALBLUE" />
+                        <JFXPasswordField fx:id="txtFieldConfirmPassword" focusColor="ROYALBLUE" layoutY="68.0" prefHeight="35.0" prefWidth="400.0" promptText="Confirm password" unFocusColor="ROYALBLUE" />
+                     </children>
+                  </Group>
+                  <Group layoutX="15.0" layoutY="156.0">
+                     <children>
+                        <Label layoutX="1.0" layoutY="-82.0" text="Employee ID" textFill="ROYALBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cmbEmployees" focusColor="ROYALBLUE" layoutY="-64.0" prefHeight="35.0" prefWidth="400.0" promptText="Select Employee ID" unFocusColor="ROYALBLUE" />
+                     </children>
+                  </Group>
+                  <Group layoutX="15.0" layoutY="137.0">
+                     <children>
+                        <Label layoutX="1.0" text="OTP" textFill="ROYALBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtOtpCode" focusColor="ROYALBLUE" layoutY="20.0" onKeyReleased="#txtOtpCodeOnKeyReleased" prefHeight="35.0" prefWidth="400.0" promptText="Enter OTP Code" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </JFXTextField>
+                        <Hyperlink layoutX="252.0" layoutY="59.0" onAction="#btnSendOtpOnAction" text="Send OTP to your Email ">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" onMouseDragged="#OnMouseDragged" onMousePressed="#OnMousePressed" prefHeight="921.0" prefWidth="1364.0" stylesheets="@../asserts/css/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.DashboardController">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="921.0" prefWidth="1364.0">
+         <top>
+            <AnchorPane prefHeight="58.0" prefWidth="1364.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="35.0" prefWidth="1364.0" style="-fx-background-color: #0504AA;">
+                     <children>
+                        <Group layoutX="1300.0" layoutY="5.0">
+                           <children>
+                              <HBox layoutX="33.0" onMouseClicked="#btnCloseOnMouseClicked" styleClass="icon">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" styleClass="icon">
+                                       <image>
+                                          <Image url="@../asserts/icons/window_Controllers/Close_new_3_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox onMouseClicked="#btnMinimizeOnMouseClicked" styleClass="icon">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" styleClass="icon">
+                                       <image>
+                                          <Image url="@../asserts/icons/window_Controllers/Minimize_new_3_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                           </children>
+                        </Group>
+                     </children></Pane>
+                  <HBox alignment="CENTER_RIGHT" layoutY="35.0" prefHeight="48.0" prefWidth="1364.0" style="-fx-background-color: #4169E1;" AnchorPane.rightAnchor="0.0">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <children>
+                        <Group>
+                           <children>
+                              <ImageView fitHeight="42.0" fitWidth="50.0" layoutY="16.0">
+                                 <image>
+                                    <Image url="@../asserts/images/Logo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="52.0" layoutY="14.0" prefHeight="35.0" prefWidth="55.0" text="SAHAN" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="62.0" layoutY="37.0" text="Learner's">
+                                 <font>
+                                    <Font name="Calibri Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="40.0" />
+                           </HBox.margin>
+                        </Group>
+                        <Label fx:id="lblTime" text="00:00 AM" textFill="WHITE">
+                           <font>
+                              <Font name="Thibus29STru" size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="lblDate" text="2024-05-01" textFill="WHITE">
+                           <font>
+                              <Font name="Thibus29STru" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="758.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="lblRegistor" alignment="CENTER" onMouseClicked="#btnRegistorOnClicked" prefHeight="24.0" prefWidth="122.0" text="Registor" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fx:id="ivRegistorIcon" fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../asserts/icons/Registor_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="lblLogout" alignment="CENTER" onMouseClicked="#btnLogoutOnClicked" prefHeight="24.0" prefWidth="119.0" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fx:id="ivLogoutIcon" fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../asserts/icons/Logout_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="838.0" prefWidth="271.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="taskBarPane" layoutX="53.0" layoutY="5.0" />
+                  <AnchorPane fx:id="sidebar" layoutX="49.0" layoutY="5.0" prefHeight="838.0">
+                     <children>
+                        <VBox prefHeight="833.0" prefWidth="232.0" style="-fx-background-color: #4169E1; -fx-background-radius: 0 30 30 0;">
+                           <children>
+                              <Pane prefHeight="160.0" prefWidth="307.0" stylesheets="@../asserts/css/stylesheet.css">
+                                 <children>
+                                    <Group layoutX="64.0" layoutY="19.0">
+                                       <children>
+                                          <ImageView layoutX="1.0">
+                                             <image>
+                                                <Image url="@../asserts/icons/User_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Circle fill="#2fd71c" layoutX="74.0" layoutY="88.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                                          <Label fx:id="lblUiUsername" alignment="CENTER" contentDisplay="CENTER" layoutX="-62.0" layoutY="102.0" prefHeight="21.0" prefWidth="225.0" text="Username" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Group>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Pane>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnEmployees" alignment="BASELINE_LEFT" onMouseClicked="#btnEmployeesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Employees" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnStudents" alignment="BASELINE_LEFT" onMouseClicked="#btnStudentsOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Students" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnAttendances" alignment="BASELINE_LEFT" onMouseClicked="#btnAttendancesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Attendances" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnCourses" alignment="BASELINE_LEFT" onMouseClicked="#btnCoursesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Courses" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnVehicles" alignment="BASELINE_LEFT" onMouseClicked="#btnVehiclesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Vehicles" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnExams" alignment="BASELINE_LEFT" onMouseClicked="#btnExamsOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Exams" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="410.0" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnSchedule" alignment="BASELINE_LEFT" onMouseClicked="#btnSchedulesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Lesson Schedule" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnSalaries" alignment="BASELINE_LEFT" onMouseClicked="#btnSalariesOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Salaries" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnPayments" alignment="BASELINE_LEFT" onMouseClicked="#btnPaymentsOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Payments" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" onMouseClicked="#btnSettingsOnClicked" prefHeight="60.0" prefWidth="317.0" ripplerFill="#4cc9f04a" stylesheets="@../asserts/css/stylesheet.css" text=" Settings" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="125.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="5.0" prefHeight="838.0">
+                     <children>
+                        <VBox prefHeight="833.0" prefWidth="48.0" style="-fx-background-color: #0504AA;">
+                           <children>
+                              <Pane prefHeight="180.0" prefWidth="48.0" stylesheets="@../asserts/css/stylesheet.css">
+                                 <children>
+                                    <Group layoutX="5.0" layoutY="42.0">
+                                       <children>
+                                          <Label fx:id="menu" layoutX="-5.0" layoutY="-42.0" prefHeight="48.0" prefWidth="48.0" styleClass="sidebarIcon" stylesheets="@../asserts/css/stylesheet.css" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Black" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="38.0" fitWidth="38.0">
+                                                   <image>
+                                                      <Image url="@../asserts/icons/Menu_icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="menuClose" layoutX="-5.0" layoutY="-42.0" prefHeight="48.0" prefWidth="48.0" styleClass="sidebarIcon" stylesheets="@../asserts/css/stylesheet.css" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Black" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="38.0" fitWidth="38.0">
+                                                   <image>
+                                                      <Image url="@../asserts/icons/Menu_icon.png" />
+                                                   </image>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </Group>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Pane>
+                              <HBox fx:id="iconEmployees" alignment="CENTER_LEFT" onMouseClicked="#btnEmployeesOnClicked" prefHeight="48.0" prefWidth="307.0" styleClass="sidebarIcon">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Employee_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconStudents" alignment="CENTER_LEFT" onMouseClicked="#btnStudentsOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Student_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconAttendances" alignment="CENTER_LEFT" onMouseClicked="#btnAttendancesOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Attendance_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconCourses" alignment="CENTER_LEFT" onMouseClicked="#btnCoursesOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Course_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconVehicles" alignment="CENTER_LEFT" onMouseClicked="#btnVehiclesOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Vehicle_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconExams" alignment="CENTER_LEFT" onMouseClicked="#btnExamsOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="34.0" fitWidth="34.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Exam_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="8.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconSchedules" alignment="CENTER_LEFT" layoutX="10.0" layoutY="506.0" onMouseClicked="#btnSchedulesOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Lesson_shedule_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconSalaries" alignment="CENTER_LEFT" onMouseClicked="#btnSalariesOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Salary_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconPayments" alignment="CENTER_LEFT" onMouseClicked="#btnPaymentsOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Payment_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <HBox fx:id="iconSettings" alignment="CENTER_LEFT" onMouseClicked="#btnSettingsOnClicked" prefHeight="48.0" prefWidth="307.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../asserts/icons/Settings_icon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="9.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="125.0" />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="838.0" prefWidth="1094.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="833.0" prefWidth="1073.0" style="-fx-background-color: #0504AA;">
+                     <children>
+                        <Label layoutX="470.0" layoutY="364.0" prefHeight="105.0" prefWidth="134.0" text="TEST" textFill="WHITE">
+                           <font>
+                              <Font size="60.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

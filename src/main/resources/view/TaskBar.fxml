@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="taskBarPane" prefHeight="833.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.TaskBarController">
+   <children>
+      <AnchorPane layoutX="1.0" minHeight="0.0" minWidth="0.0" prefHeight="833.0" prefWidth="227.0">
+         <children>
+            <TableView fx:id="tableNote" layoutX="-1.0" prefHeight="793.0" prefWidth="228.0" styleClass="textFiled">
+              <columns>
+                <TableColumn fx:id="columnNote" prefWidth="225.0" text="NOTE" />
+              </columns>
+            </TableView>
+            <Group layoutX="-14.0" layoutY="796.0">
+               <children>
+                  <JFXButton layoutX="13.0" layoutY="-1.0" onAction="#btnAddNoteOnAction" prefHeight="38.0" prefWidth="113.0" ripplerFill="#4cc9f029" style="-fx-background-radius: 5;" styleClass="saveBtn" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton layoutX="128.0" layoutY="-1.0" onAction="#btnRemoveNoteOnAction" prefHeight="38.0" prefWidth="113.0" ripplerFill="#4cc9f029" style="-fx-background-radius: 5;" styleClass="removeBtn" text="Remove" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../asserts/css/stylesheet.css" />
+      <URL value="@../asserts/css/TableStyle.css" />
+   </stylesheets>
+</AnchorPane>

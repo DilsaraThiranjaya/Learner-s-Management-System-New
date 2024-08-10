@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paymentsPane" prefHeight="843.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.lms.controller.PaymentController">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="833.0" prefWidth="1073.0" style="-fx-background-color: #0504AA;">
+         <children>
+            <Group layoutX="25.0" layoutY="10.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="121.0" prefHeight="571.0" prefWidth="27.0" text="PAYMENTS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <QuadCurve controlX="-231.0" controlY="125.0" endY="-279.0" fill="WHITE" layoutX="170.0" layoutY="283.0" startY="526.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="805.0" layoutX="169.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="865.0" />
+                  <Group layoutX="228.0" layoutY="29.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutY="8.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="3.0" width="747.0" />
+                        <HBox alignment="CENTER" layoutX="18.0" prefHeight="20.0" prefWidth="85.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="170.0" text="Search" textFill="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="24.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="43.0" styleClass="textFiled">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" styleClass="textFiled">
+                                 <image>
+                                    <Image url="@../asserts/icons/Search_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <JFXTextField fx:id="txtSearch" focusColor="ROYALBLUE" layoutX="17.0" layoutY="24.0" onAction="#txtSearchOnAction" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="35.0" prefWidth="280.0" promptText="Search by Payment ID" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <JFXButton buttonType="RAISED" layoutX="539.0" layoutY="554.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="133.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="removeBtn" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@../asserts/icons/Update_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="682.0" layoutY="554.0" onAction="#btnPrintOnAction" prefHeight="40.0" prefWidth="133.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="updateBtn" text="Print" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../asserts/icons/Print_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="396.0" layoutY="554.0" onAction="#btnCheckOutOnAction" prefHeight="40.0" prefWidth="133.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="saveBtn" text="Check Out" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@../asserts/icons/CheckOut_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="825.0" layoutY="554.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="133.0" ripplerFill="#4cc9f0" style="-fx-background-radius: 5;" styleClass="clearBtn" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../asserts/icons/Clear_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Group layoutX="-34.0" layoutY="383.0">
+                     <children>
+                        <JFXTextField fx:id="txtDescription" focusColor="ROYALBLUE" labelFloat="true" layoutX="279.0" layoutY="59.0" prefHeight="35.0" prefWidth="713.0" promptText="Description" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <Group layoutX="628.0" layoutY="135.0">
+                     <children>
+                        <Label layoutX="1.0" layoutY="-18.0" prefHeight="17.0" prefWidth="196.0" text="Date" textFill="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
+                        </Label>
+                        <Group>
+                           <children>
+                              <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="35.0" stroke="ROYALBLUE" strokeType="INSIDE" width="330.0" />
+                              <Label fx:id="lblDate" prefHeight="35.0" prefWidth="330.0" text="___" textFill="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+                  <Group layoutX="245.0" layoutY="491.0">
+                     <children>
+                        <JFXTextField fx:id="txtStudentId" focusColor="ROYALBLUE" labelFloat="true" layoutY="17.0" onKeyReleased="#txtStudentIdOnKeyRelesed" prefHeight="35.0" prefWidth="330.0" promptText="Student ID *" unFocusColor="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </JFXTextField>
+                     </children>
+                  </Group>
+                  <Group layoutX="299.0" layoutY="442.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbPMethod" focusColor="ROYALBLUE" labelFloat="true" layoutX="329.0" layoutY="65.0" prefHeight="35.0" prefWidth="330.0" promptText="Payment Method *" unFocusColor="ROYALBLUE" />
+                     </children>
+                  </Group>
+                  <TableView fx:id="tablePayment" layoutX="244.0" layoutY="604.0" prefHeight="172.0" prefWidth="713.0" styleClass="textFiled">
+                     <columns>
+                        <TableColumn fx:id="columnPId" prefWidth="114.0" text="Payment ID" />
+                        <TableColumn fx:id="columnDate" prefWidth="152.0" text="Date" />
+                        <TableColumn fx:id="columnDescription" prefWidth="282.0" text="Description" />
+                        <TableColumn fx:id="columnSId" minWidth="0.0" prefWidth="114.0" text="Student ID" />
+                        <TableColumn fx:id="columnSName" minWidth="0.0" prefWidth="265.0" text="Name" />
+                        <TableColumn fx:id="columnCourses" minWidth="0.0" prefWidth="500.0" text="Courses" />
+                        <TableColumn fx:id="columnAmount" minWidth="0.0" prefWidth="203.0" text="Amount (Rs.)" />
+                        <TableColumn fx:id="columnPMethod" minWidth="0.0" prefWidth="143.0" text="Payment Method" />
+                     </columns>
+                  </TableView>
+                  <Group layoutX="-34.0" layoutY="77.0">
+                     <children>
+                        <Label layoutX="280.0" layoutY="40.0" prefHeight="17.0" prefWidth="196.0" text="Payment ID" textFill="ROYALBLUE">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
+                        </Label>
+                        <Group layoutX="279.0" layoutY="58.0">
+                           <children>
+                              <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="35.0" stroke="ROYALBLUE" strokeType="INSIDE" width="330.0" />
+                              <Label fx:id="lblPaymentId" prefHeight="35.0" prefWidth="330.0" text="___" textFill="ROYALBLUE">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+                  <Group layoutX="245.0" layoutY="184.0">
+                     <children>
+                        <TableView fx:id="tableCourses" layoutY="56.0" prefHeight="126.0" styleClass="textFiled">
+                          <columns>
+                            <TableColumn fx:id="columnCourse" prefWidth="498.0" text="Course" />
+                            <TableColumn fx:id="columnPrice" minWidth="0.0" prefWidth="161.0" text="Price (Rs.)" />
+                          </columns>
+                        </TableView>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="669.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnAddCourseOnAction" prefHeight="35.0" prefWidth="43.0" styleClass="textFiled">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0">
+                                 <image>
+                                    <Image url="@../asserts/icons/Add_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="669.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnRemoveCourseOnAction" prefHeight="35.0" prefWidth="43.0" styleClass="textFiled">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0">
+                                 <image>
+                                    <Image url="@../asserts/icons/Remove_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <JFXComboBox fx:id="cmbCourses" focusColor="ROYALBLUE" labelFloat="true" layoutY="14.0" prefHeight="35.0" prefWidth="713.0" promptText="Courses *" unFocusColor="ROYALBLUE" />
+                     </children>
+                  </Group>
+                  <Group layoutX="245.0" layoutY="377.0">
+                     <children>
+                        <Label prefHeight="35.0" prefWidth="77.0" text="Total :">
+                           <font>
+                              <Font name="Arial Black" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lblTotal" alignment="CENTER_RIGHT" layoutX="568.0" prefHeight="35.0" prefWidth="146.0" text="___" textFill="#0504aa">
+                           <font>
+                              <Font name="Arial Black" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="15.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="69.0" prefHeight="35.0" prefWidth="45.0" text="Rs." textFill="#0504aa">
+                           <font>
+                              <Font name="Arial Black" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Line layoutX="958.0" layoutY="379.0" startX="-713.0" stroke="ROYALBLUE" strokeWidth="4.0" />
+                  <Line layoutX="958.0" layoutY="410.0" startX="-713.0" stroke="ROYALBLUE" strokeWidth="2.0" />
+                  <Line layoutX="958.0" layoutY="414.0" startX="-713.0" stroke="ROYALBLUE" strokeWidth="2.0" />
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../asserts/css/stylesheet.css" />
+      <URL value="@../asserts/css/TableStyle.css" />
+   </stylesheets>
+</AnchorPane>
